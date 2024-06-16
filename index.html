@@ -78,6 +78,23 @@
       <p4>foofoofoo</p4>
     </div>
   </div>
+  <script>
+    function setupTabs () {
+      document.querySelectorAll(".tabs__content").forEach(button => {
+        button.addEventListener("click", () => {
+          const sideBar = button.parentElement;
+          const tabsContainer = sideBar.parentElement;
+          const tabNumber = button.dataset.forTab;
+          const tabToActivate = tabsContainer.querySelector(`.tabs__content[data-tab="${tabNumber}"]`);
+
+          console.log(sideBar);
+          console.log(tabsContainer);
+          console.log(tabNumber);
+          console.log(tabToActivate);
+        });
+      });
+    }
+  </script>
 </body>
 
 
