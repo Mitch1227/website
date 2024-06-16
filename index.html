@@ -61,7 +61,7 @@
   </center>
   <div class="tabs">
     <div class="tabs__sidebar">
-      <button class="tabs__button tabs__button--active" data-for-tab="1">Tab #1</button>
+      <button class="tabs__button" data-for-tab="1">Tab #1</button>
       <button class="tabs__button" data-for-tab="2">Tab #2</button>
       <button class="tabs__button" data-for-tab="3">Tab #3</button>
     </div>
@@ -85,7 +85,7 @@
           const sideBar = button.parentElement;
           const tabsContainer = sideBar.parentElement;
           const tabNumber = button.dataset.forTab;
-          const tabToActivate = tabsContainer.querySelector(`.tabs__content[data-tab="${tabNumber}"]`);
+          const tabToActivate = tabsContainer.querySelector('.tabs__content[data-tab="${tabNumber}"]');
 
           sideBar.querySelectorAll(".tabs__button").forEach(button => {
             button.classList.remove("tabs__button--active");
@@ -101,6 +101,10 @@
 
     document.addEventListener("DOMContentLoaded", () => {
       setupTabs();
+
+      document.querySelectorAll(".tabs").forEach(tabsContainer => {
+        tabsContainer.querySelector(".tabs__sidebar .tabs__button").click();
+      });
     });
   </script>
 </body>
