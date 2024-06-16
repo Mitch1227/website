@@ -93,6 +93,8 @@
            tabsContainer.querySelectorAll(".tabs__content").forEach(button => {
             tab.classList.remove("tabs__content--active");
           });
+          button.classList.add("tabs__button--active");
+          tabToActivate.classList.add("tabs__content--active");
         });
       });
     }
