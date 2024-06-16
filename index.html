@@ -80,7 +80,7 @@
   </div>
   <script>
     function setupTabs () {
-      document.querySelectorAll(".tabs__content").forEach(button => {
+      document.querySelectorAll(".tabs__button").forEach(button => {
         button.addEventListener("click", () => {
           const sideBar = button.parentElement;
           const tabsContainer = sideBar.parentElement;
@@ -94,6 +94,10 @@
         });
       });
     }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setupTabs();
+    });
   </script>
 </body>
 
